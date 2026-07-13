@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangar Saving and Credit Cooperative Society</title>
+    <style>
+        /* Color Palette & Base Styles */
+        :root {
+            --primary-blue: #0A539B;
+            --secondary-green: #258738;
+            --dark-text: #2C3E50;
+            --light-bg: #F4F7F6;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-green);
+        }
+
+        .btn-portal {
+            background-color: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 8px 18px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-portal:hover {
+            background-color: var(--secondary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 83, 155, 0.9), rgba(37, 135, 56, 0.8)), url('logo.jpg') center/cover;
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: var(--secondary-green);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* Services Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-green);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Calculator Tool */
+        .calc-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-section">
+                <!-- Referencing logo.jpg directly -->
+                <img src="logo.jpg" alt="Hangar Logo">
+                <div class="brand-name">
+                    HANGAR <br>
+                    <span style="font-size: 0.8rem; color: var(--secondary-green);">Saving and Credit Cooperative Society</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#calculator">Loan Calc</a></li>
+                    <li><a href="#contact" class="btn-portal">Member Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Empowering Your Financial Growth</h1>
+            <p>Join Hangar Saving and Credit Cooperative Society today. Secure savings, competitive interest rates, and flexible credit options tailored to support your prosperity.</p>
+            <a href="#contact" class="cta-btn">Become a Member</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container" id="about">
+        <h2 class="section-title">About Our Cooperative</h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p>At <strong>Hangar Saving and Credit Cooperative Society</strong>, we believe in the power of financial cooperation and mutual support. Our mission is to foster financial security and independence among our members through sustainable savings and affordable access to credit facilities.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section style="background-color: #EBF3FA;" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Financial Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Savings Accounts</h3>
+                    <p>Flexible deposit options yielding competitive dividends to ensure your money works effectively for your future goals.</p>
+                </div>
+                <div class="card">
+                    <h3>Development Loans</h3>
+                    <p>Low-interest long-term credit tailored for asset growth, land purchase, and major home development projects.</p>
+                </div>
+                <div class="card">
+                    <h3>Emergency Credit</h3>
+                    <p>Fast and reliable short-term credit facilities designed to give you peace of mind during unexpected life events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Loan Estimator Section -->
+    <section class="container" id="calculator">
+        <h2 class="section-title">Quick Loan Repayment Estimator</h2>
+        <div class="calc-box">
+            <div class="input-group">
+                <label for="amount">Loan Amount (ETB)</label>
+                <input type="number" id="amount" placeholder="e.g., 5000" oninput="calculateLoan()">
+            </div>
+            <div class="input-group">
+                <label for="months">Duration (Months)</label>
+                <input type="number" id="months" placeholder="e.g., 12" oninput="calculateLoan()">
+            </div>
+            <div style="margin-top: 20px; font-weight: bold; text-align: center; color: var(--primary-blue);">
+                Estimated Monthly Payment: <span id="monthly-payment" style="color: var(--secondary-green); font-size: 1.4rem;">0 ETB</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <p><strong>Hangar Saving and Credit Cooperative Society</strong></p>
+        <p>Building strong financial futures together.</p>
+        <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">&copy; 2026 Hangar Saving and Credit Cooperative Society. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive JS for Loan Calculation -->
+    <script>
+        function calculateLoan() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const months = parseInt(document.getElementById('months').value);
+            const output = document.getElementById('monthly-payment');
+
+            // Standard basic interest formula (e.g., 10% annual rate estimation)
+            if (amount > 0 && months > 0) {
+                const interestRate = 0.10; // 10% Annual rate
+                const totalInterest = amount * interestRate * (months / 12);
+                const totalRepayable = amount + totalInterest;
+                const monthly = totalRepayable / months;
+
+                output.innerText =  monthly.toFixed(2) + 'ETB';
+            } else {
+                output.innerText = '0 ETB';
+            }
+        }
+    </script>
+</body>
+</html>
